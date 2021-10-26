@@ -1,6 +1,8 @@
 let gridSize = 64;
 const gridState = document.querySelector("#gridState");
 gridState.innerHTML = gridSize;
+pickerUsed = false;
+const colorPicker = document.querySelector('#colorpicker');
 
 //State display
 const container = document.querySelector('#container');
@@ -55,7 +57,12 @@ function drawGrid(size) {
 
         square.addEventListener("mousedown", function () {
             if (state == "pencil"){
-                this.style.backgroundColor = currentColor;
+                if (pickerUsed == true){
+                    this.style.backgroundColor = colorPicker.value;
+                }
+                else {
+                    this.style.backgroundColor = currentColor;
+                }
             }
             else if (state == "eraser"){
                 this.style.backgroundColor = "white";
@@ -68,12 +75,18 @@ function drawGrid(size) {
                 updateColor(this.style.backgroundColor.toString());
                 state = "pencil";
                 document.body.style.cursor = "default";
+                pickerUsed = true;
             }
         });
 
         square.addEventListener("mouseenter", function () {
             if (state == "pencil" && mouseDown == true){
-                this.style.backgroundColor = currentColor;
+                if (pickerUsed == true){
+                    this.style.backgroundColor = colorPicker.value;
+                }
+                else {
+                    this.style.backgroundColor = currentColor;
+                }
             }
             else if (state == "eraser" && mouseDown == true){
                 this.style.backgroundColor = "white";
@@ -150,7 +163,7 @@ const bDraw = document.querySelector("#btn3");
 bDraw.addEventListener("click", () => {
     setState("pencil");
     getState("pencil");
-    updateColor("black");
+    updateColor(colorPicker.value);
 })
 
 const bRainbow = document.querySelector("#btn4");
@@ -175,7 +188,6 @@ eyeDropper.addEventListener("click", () => {
     document.body.style.cursor = "crosshair";
 })
 
-const colorPicker = document.querySelector('#colorpicker');
 colorPicker.addEventListener("input", () => {
     updateColor(colorPicker.value);
 })
