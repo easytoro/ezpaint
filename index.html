@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Etch</title>
+</head>
+<body>
+    <div id="maincontainer">
+        <div id ="sidebar">
+            <button id="btn3">Pencil</button>
+            <button id="btn4">Pencil (Random)</button>
+            <button id="btn2">Eraser</button>
+            <button id ="btn7">Eyedropper</button>
+            <div id="colorbutton">
+                <label for="head">Color Picker:</label>
+                <input type="color" id="colorpicker" name="colorpicker" value = "#000000"> 
+            </div>
+            </br></br>
+            <button id="btn1">Reset</button>
+            <button id="btn5">Change Grid Size</button>
+            <!--<button id="btn6">Erase Grid</button> -->
+        </div>
+        <div id="middle">
+            <div id="container"></div>
+            <div class="stateContainer">
+                <div id="Current tool: ">Current tool:&nbsp </div>
+                <div id="toolState"></div>
+            </div>
+            <div class="stateContainer">
+                <div id="colorTitle">Current color:&nbsp </div>
+                <div id="colorState"></div>
+            </div>
+            <div class="stateContainer">
+                <div id="gridTitle">Grid size:&nbsp </div>
+                <div id="gridState"></div>
+            </div>
+            <div class="stateContainer">
+                <div id="stateTitle">Mouse down:&nbsp </div>
+                <div id="state"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

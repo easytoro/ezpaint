@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+}
+
+button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#maincontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.square {
+    background: white;
+    width: 8px;
+    height: 8px;
+    vertical-align: top;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/*grid-template: repeat(5, 100px) / repeat(5, 100px);*/
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(64, 8px);
+    grid-template-rows: repeat(64, 8px);
+    width: 512px;
+    height: 512px;
+    outline: solid 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stateContainer {
+display: flex;
+flex-direction: row;
+}
+
+#colorbutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5px;
+}
+
+#colorpicker {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+}
+
+
+  
