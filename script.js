@@ -58,7 +58,7 @@ function drawGrid(size) {
         square.addEventListener("mousedown", function () {
             if (state == "pencil"){
                 if (pickerUsed == true){
-                    this.style.backgroundColor = colorPicker.value;
+                    this.style.backgroundColor = currentColor;
                 }
                 else {
                     this.style.backgroundColor = currentColor;
@@ -69,7 +69,6 @@ function drawGrid(size) {
             }
             else if (state == "rainbow"){
                 this.style.backgroundColor = "#" + randomColor();
-                updateColor("random");
             }
             else if (state == "eyedropper"){
                 updateColor(this.style.backgroundColor.toString());
@@ -82,7 +81,7 @@ function drawGrid(size) {
         square.addEventListener("mouseenter", function () {
             if (state == "pencil" && mouseDown == true){
                 if (pickerUsed == true){
-                    this.style.backgroundColor = colorPicker.value;
+                    this.style.backgroundColor = currentColor;
                 }
                 else {
                     this.style.backgroundColor = currentColor;
@@ -93,7 +92,6 @@ function drawGrid(size) {
             }
             else if (state == "rainbow" && mouseDown == true){
                 this.style.backgroundColor = "#" + randomColor();
-                updateColor("random");
             }
         });    
     }
@@ -163,21 +161,19 @@ const bDraw = document.querySelector("#btn3");
 bDraw.addEventListener("click", () => {
     setState("pencil");
     getState("pencil");
-    updateColor(colorPicker.value);
+    updateColor(currentColor);
 })
 
 const bRainbow = document.querySelector("#btn4");
 bRainbow.addEventListener("click", () => {
     setState("rainbow");
     getState("rainbow");
-    updateColor("random");
 })
 
 const bErase = document.querySelector("#btn2");
 bErase.addEventListener("click", () => {
     setState("eraser");
     getState("eraser");
-    updateColor("none");
 })
 
 const eyeDropper = document.querySelector("#btn7");
