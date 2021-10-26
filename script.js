@@ -114,12 +114,12 @@ bSize.addEventListener("click", () =>  {
     squareSize();
 
     for (i = 0; i < allSquares.length; i++){
-        allSquares[i].style.height = toString(500/gridSize) + "px";
-        allSquares[i].style.width = toString(500/gridSize) + "px";
+        allSquares[i].style.height = toString(512/gridSize) + "px";
+        allSquares[i].style.width = toString(512/gridSize) + "px";
     }
 
-    let newWidth = 500/gridSize.toString();
-    let newHeight = 500/gridSize.toString();
+    let newWidth = 512/gridSize.toString();
+    let newHeight = 512/gridSize.toString();
 
     let widthString = '';
     let heightString = '';
