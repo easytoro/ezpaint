@@ -96,7 +96,7 @@ function deleteGrid(){
 function squareSize() {
     for (i = 0; i < allSquares.length; i++){
 
-        dimension = 500/gridSize;
+        dimension = 512/gridSize;
 
         allSquares[i].style.width = (dimension.toString() + 'px');
         allSquares[i].style.height = (dimension.toString() + 'px');
